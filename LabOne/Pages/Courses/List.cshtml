@@ -1,0 +1,50 @@
+﻿@page
+@model LabOne.Pages.Courses.ListModel
+@{
+    ViewBag.Title = "List Courses";
+}
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Course[0].Parallel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Course[0].Letter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Course[0].Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Course[0].Teacher)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Course) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Parallel.Number)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Letter)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Teacher.FullName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./EditScholars" asp-route-id="@item.Id">Edit Scholars</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

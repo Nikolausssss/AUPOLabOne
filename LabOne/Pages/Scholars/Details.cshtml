@@ -1,0 +1,37 @@
+﻿@page
+@model LabOne.Pages.Scholars.DetailsModel
+@{
+    ViewBag.Title = "Details Scholar";
+}
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Scholar.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Scholar.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Scholar.SecondName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Scholar.SecondName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Scholar.Surname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Scholar.Surname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Scholar.Course)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Scholar.Course.Title)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Scholar?.Id">Edit</a> |
+    <a asp-page="./List">Back to List</a>
+</div>

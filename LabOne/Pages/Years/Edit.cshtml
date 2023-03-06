@@ -1,0 +1,31 @@
+﻿@page
+@model LabOne.Pages.Years.EditModel
+
+@{
+    ViewData["Title"] = "Edit Year";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Year.Id" />
+            <div class="form-group">
+                <label asp-for="Year.Title" class="control-label"></label>
+                <input asp-for="Year.Title" class="form-control" />
+                <span asp-validation-for="Year.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./List">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

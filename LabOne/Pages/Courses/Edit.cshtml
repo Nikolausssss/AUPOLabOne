@@ -1,0 +1,44 @@
+﻿@page
+@model LabOne.Pages.Courses.EditModel
+@{
+    ViewBag.Title = "Edit Course";
+}
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Course.Id" />
+            <div class="form-group">
+                <label asp-for="Course.TeacherId" class="control-label"></label>
+                <select asp-for="Course.TeacherId" class="form-control" asp-items="ViewBag.TeacherId"></select>
+                <span asp-validation-for="Course.TeacherId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course.YearId" class="control-label"></label>
+                <select asp-for="Course.YearId" class="form-control" asp-items="ViewBag.YearId"></select>
+                <span asp-validation-for="Course.YearId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course.ParallelId" class="control-label"></label>
+                <select asp-for="Course.ParallelId" class="form-control" asp-items="ViewBag.ParallelId"></select>
+                <span asp-validation-for="Course.ParallelId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course.Letter" class="control-label"></label>
+                <input asp-for="Course.Letter" class="form-control" />
+                <span asp-validation-for="Course.Letter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./List">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

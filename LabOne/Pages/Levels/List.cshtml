@@ -1,0 +1,24 @@
+﻿@page
+@model LabOne.Pages.Levels.ListModel
+@{
+    ViewBag.Title = "List Levels";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Level[0].Title)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Level) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

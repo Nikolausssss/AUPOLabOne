@@ -1,0 +1,29 @@
+﻿@page
+@model LabOne.Pages.Parallels.ListModel
+@{
+    ViewBag.Title = "List Parallels";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Parallel[0].Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Parallel[0].Level)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Parallel) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Level.Title)
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

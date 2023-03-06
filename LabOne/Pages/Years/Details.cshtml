@@ -1,0 +1,21 @@
+﻿@page
+@model LabOne.Pages.Years.DetailsModel
+
+@{
+    ViewData["Title"] = "Details Year";
+}
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Year.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Year.Title)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Year?.Id">Edit</a> |
+    <a asp-page="./List">Back to List</a>
+</div>

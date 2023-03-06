@@ -1,0 +1,54 @@
+﻿@page
+@model LabOne.Pages.Courses.EditScholarsModel
+
+@{
+    ViewData["Title"] = "Edit Scholars";
+}
+
+<h4>Course @Model.Course.Title</h4>
+
+<p>
+    <a asp-page="/Scholars/Create" asp-route-id="@Model.Course.Id">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Scholar[0].Course)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scholar[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scholar[0].SecondName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scholar[0].Surname)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Scholar) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.Parallel.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                <a asp-page="/Scholars/Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="/Scholars/Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="/Scholars/Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,75 @@
+﻿@page
+@model LabOne.Pages.Courses.DetailsModel
+@{
+    ViewBag.Title = "Details Course";
+}
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Course.Teacher)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Course.Teacher.FullName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Course.Year)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Course.Year.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Course.Parallel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Course.Parallel.Number)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Course.Letter)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Course.Letter)
+        </dd>
+    </dl>
+    <h4>Scholars</h4>
+    <table class="table">
+    <thead>
+        <tr>
+            <th>
+                    @Html.DisplayNameFor(model => model.Scholar[0].SecondName)
+            </th>
+            <th>
+                    @Html.DisplayNameFor(model => model.Scholar[0].FirstName)
+            </th>
+            <th>
+                    @Html.DisplayNameFor(model => model.Scholar[0].Surname)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var item in Model.Scholar)
+            {
+            <tr>
+                <td>
+                        @Html.DisplayFor(modelItem => item.SecondName)
+                </td>
+                <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                        @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                        <a href="/Scholars/Details?id=@item.Id">Details</a>
+                </td>
+            </tr>
+            }
+    </tbody>
+</table>
+
+
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Course?.Id">Edit</a> |
+    <a asp-page="./List">Back to List</a>
+</div>

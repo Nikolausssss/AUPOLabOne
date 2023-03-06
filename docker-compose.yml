@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  labone:
+    image: ${DOCKER_REGISTRY-}labone
+    build:
+      context: .
+      dockerfile: LabOne/Dockerfile

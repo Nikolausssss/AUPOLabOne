@@ -7,11 +7,11 @@
 ## Указания по запуску программы.
 
 - Для запуска на Windows
-	0. Для запуска необходим SDK .NET 7.0, если у вас он не установлен, то скачать можно тут https://dotnet.microsoft.com/en-us/download/dotnet/7.0
-	1. Скачать релиз с GitHub 
-	2. Разархивировать в папку
-	3. Запустить файл LabOne.exe из cmd.
-	4. Вписать в браузер значение в строке "Now listening on:" (http://localhost:"порт")
+	1. Для запуска необходим SDK .NET 7.0, если у вас он не установлен, то скачать можно тут https://dotnet.microsoft.com/en-us/download/dotnet/7.0
+	2. Скачать релиз с GitHub 
+	3. Разархивировать в папку
+	4. Запустить файл LabOne.exe из cmd.
+	5. Вписать в браузер значение в строке "Now listening on:" (http://localhost:"порт")
 
 - Для запуска в Docker (docker-compose)
 	1. Склонировать код с репозитория GitHub
